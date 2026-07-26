@@ -1,0 +1,29 @@
+---
+layout: default
+---
+
+{% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+
+{% for year in posts_by_year %}
+  <div class="year-heading">{{ year.name }}</div>
+  <ul class="post-list">
+    {% for post in year.items %}
+      <li class="post-item">
+        <div class="post-item-meta">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%m-%d" }}</time>
+          {%- if post.slot %}<span class="slot-badge">{{ post.slot }}</span>{% endif -%}
+        </div>
+        <h2 class="post-item-title">
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </h2>
+        {%- if post.summary %}
+        <p class="post-item-excerpt">{{ post.summary }}</p>
+        {%- endif %}
+      </li>
+    {% endfor %}
+  </ul>
+{% endfor %}
+
+{% if site.posts.size == 0 %}
+  <p>还没有简报。第一篇会在下一次定时任务运行后自动发布。</p>
+{% endif %}

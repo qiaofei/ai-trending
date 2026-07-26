@@ -1,0 +1,34 @@
+title: GitHub AI 技术简报
+tagline: 每日三次 · 面向工程师的 GitHub AI 项目观察
+description: >-
+  每天早上 9:00、下午 15:00、晚上 20:00 自动更新的 GitHub AI 项目技术简报。
+  关注架构设计、关键实现与工程取舍，不写营销式介绍。
+lang: zh-Hans
+timezone: Asia/Singapore
+
+# 部署到 https://<username>.github.io/<repo>/ 时，把 baseurl 设为 "/<repo>"
+# 部署到 https://<username>.github.io/ 时，baseurl 留空
+baseurl: ""
+url: ""
+
+permalink: /:year/:month/:day/:title/
+paginate: 20
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  hard_wrap: false
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+feed:
+  path: feed.xml
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
