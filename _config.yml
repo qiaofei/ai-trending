@@ -6,10 +6,8 @@ description: >-
 lang: zh-Hans
 timezone: Asia/Singapore
 
-# 部署到 https://<username>.github.io/<repo>/ 时，把 baseurl 设为 "/<repo>"
-# 部署到 https://<username>.github.io/ 时，baseurl 留空
-baseurl: ""
-url: ""
+baseurl: "/ai-trending"
+url: "https://qiaofei.github.io"
 
 permalink: /:year/:month/:day/:title/
 paginate: 20
